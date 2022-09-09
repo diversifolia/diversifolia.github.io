@@ -18,12 +18,6 @@ const dom = {
   body : document.querySelector('body')
 }
 
-var queryString = window.location.search;
-
-// const urlParams = new URLSearchParams(queryString);
-
-console.log(queryString)
-
 const highlightMenuLink = (element) => {
   document.querySelectorAll('.current').forEach(result => {
     result.classList.remove('current')

@@ -516,3 +516,10 @@ svg path {
   width: 66%;
   padding-left: 20px;
 }
+
+
+/* misc */
+
+.wp-block-column {
+  overflow-x: hidden !important;
+}
