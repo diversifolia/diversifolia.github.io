@@ -15,6 +15,7 @@ const dom = {
   gallery_viewer_close : document.querySelector('#close-gallery'),
   gallery_viewer_next : document.querySelector('#gallery-next'),
   gallery_viewer_prev : document.querySelector('#gallery-prev'),
+  body : document.querySelector('body')
 }
 
 var queryString = window.location.search;
@@ -132,6 +133,7 @@ let posts = getPosts()
 
 const closeMobileMenu = () => {
   dom.side_menu.classList.remove('open')
+  dom.body.classList.remove('mobile-menu-open')
 }
 
 const fillMenu = (posts) => {
@@ -150,9 +152,15 @@ const fillMenu = (posts) => {
 
 
 
-dom.mobile_menu_link.addEventListener('click', () => dom.side_menu.classList.add('open'))
+dom.mobile_menu_link.addEventListener('click', () => {
+  dom.side_menu.classList.add('open')
+  dom.body.classList.add('mobile-menu-open')
+})
 
-dom.mobile_menu_close.addEventListener('click', () => dom.side_menu.classList.remove('open'))
+dom.mobile_menu_close.addEventListener('click', () => {
+  dom.side_menu.classList.remove('open')
+  dom.body.classList.remove('mobile-menu-open')
+})
 
 dom.gallery_viewer_close.addEventListener('click', () => dom.gallery_viewer.classList.remove('open'))
 
