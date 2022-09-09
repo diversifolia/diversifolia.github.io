@@ -86,7 +86,10 @@ const loadView = (content, type) => {
 
 }
 
-
+const addArticleClass = (id) => {
+  dom.view_port.removeAttribute('class')
+  dom.view_port.classList.add(id)
+}
 
 
 // feed it a link array of links you want to link to the gotten wordpress post
@@ -98,6 +101,7 @@ async function getPage(id, link_array) {
     link.addEventListener('click', () => {
       loadView(postData.content.rendered)
       highlightMenuLink(link)
+      addArticleClass(id === 30 ? 'about' : id === 6 ? 'home' : 'misc')
       closeMobileMenu()
     })
 
@@ -138,6 +142,7 @@ const fillMenu = (posts) => {
       child.addEventListener('click', () => {
         loadView(post.content, 'gallery')
         highlightMenuLink(child)
+        addArticleClass(post.title)
         closeMobileMenu()
       })
     })

@@ -86,33 +86,60 @@ main {
     margin: 0;
 
   }
-  menu#mobile_menu {
+  /* menu#mobile_menu {
     display: block;
     margin-top: 0 !important;
     margin: 10px 0;
     position: relative;
     top: -10px;
-  }
+  } */
   #menu-close {
     position: absolute;
     top: .5em;
     right: 1em;
     font-size: 1.2em;
     color: var(--red);
+
     z-index: 999;
+  }
+  #menu-close svg path {
+    stroke: var(--red);
+    cursor: pointer;
   }
   menu#side-menu {
     max-height: 0;
     overflow: hidden;
-    padding: 0;
+    /* padding: 0; */
     font-size: 1.1em;
     transition: 0.5s;
+
+    /* padding: 1em 0; */
+    /* z-index: -100; */
+  }
+  /* main {
+    z-index: 1;
+  } */
+  menu#side-menu #post-menu {
+    margin-top: 1em;
+  }
+  menu#side-menu #main-menu {
+    margin-bottom: 1em;
+  }
+  menu#side-menu ul {
+    max-width: 80%;
+    left: 10%;
+    position: relative;
   }
   menu#side-menu.open {
-    max-height: 1000px;
+    max-height: 2000px;
     height: auto;
-    padding: 1em 0;
+    /* height: 100%; */
+    /* padding: 1em 0; */
   }
+  /* menu#side-menu {
+    display: flex;
+    flex-direction: column;
+  } */
   menu#side-menu.open li.current {
     color: var(--text);
     opacity: 0.5;
@@ -146,7 +173,7 @@ main {
     margin-top: 80px;
     padding-bottom: 80px;
   }
-  #mobile-menu, #mobile-menu-link {
+  #mobile-menu-link {
     display: none;
   }
   #menu-close {
@@ -188,7 +215,7 @@ menu ul li {
 
 /* mobile */
 
-#mobile-menu {
+/* #mobile-menu {
   background-color: var(--yellow);
   height: 0;
   overflow: hidden;
@@ -201,7 +228,7 @@ menu ul li {
 #mobile-menu.open {
   height: auto;
   max-height: 100px;
-}
+} */
 
 
 #mobile-menu-link {
@@ -380,11 +407,14 @@ svg path {
   stroke: var(--text);
   stroke-width: 2px;
 }
+#close-gallery svg path {
+  stroke-width: 1.5px;
+}
 
 /* GALLERY VIEWER */
 
 #gallery-viewer {
-  background-color: var(--white);
+  background-color: rgba(255,255,255,0.9);
   position: fixed;
   left: 0;
   width: 100%;
@@ -405,6 +435,7 @@ svg path {
   font-size: 1em;
   cursor: pointer;
   padding: .5em;
+  opacity: .5;
 }
 #gallery-viewer-image {
   /* max-width: 80%;
@@ -434,4 +465,26 @@ svg path {
   transform: translateY(-50%);
   font-size: 2em;
   cursor: pointer;
+  opacity: 0.5;
+}
+
+
+
+/* about page only  */
+
+.about figure:first-of-type {
+  margin: 0;
+}
+.about figure:first-of-type img {
+  max-height: 300px;
+  width: 100%;
+  height: auto;
+  max-width: 236px;
+}
+.about .double-column .wp-block-column:nth-of-type(1) {
+  width: 33%;
+}
+.about .double-column .wp-block-column:nth-of-type(2) {
+  width: 66%;
+  padding-left: 20px;
 }
