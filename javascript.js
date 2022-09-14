@@ -83,7 +83,7 @@ const loadView = (content, type) => {
 
 const addArticleClass = (id) => {
   dom.view_port.removeAttribute('class')
-  dom.view_port.classList.add(id)
+  dom.view_port.classList.add(id.replace(' ', '_')) //fixes salt pans not working
 }
 
 
@@ -94,10 +94,12 @@ async function getPage(id, link_array) {
 
   link_array.forEach(link => {
     link.addEventListener('click', () => {
+      console.log('link array')
       loadView(postData.content.rendered)
       highlightMenuLink(link)
       addArticleClass(id === 30 ? 'about' : id === 6 ? 'home' : 'misc')
       closeMobileMenu()
+      window.scrollTo(0, 0)
     })
 
   })

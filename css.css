@@ -373,6 +373,8 @@ article div:first-of-type {
   max-width: 200px;
   float: right;
   clear: both;
+  padding-right: 3px; /* fixed cutoff right text */`
+
 }
 .has-text-align-right em {
   font-family: BaskervilleItalic;
